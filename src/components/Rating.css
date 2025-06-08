@@ -1,0 +1,103 @@
+/* Main container styling */
+.rating-container {
+    margin: 10px auto;
+    margin-top: 10px;
+    margin-bottom: 60px;
+    padding: 20px;
+    max-width: 1200px;
+    text-align: center;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Heading styling */
+.rating-heading {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+/* Card container styling */
+.rating-cards {
+    display: flex;
+    flex-wrap: wrap; /* Allow cards to wrap onto the next row */
+    justify-content: center; /* Center cards within the container */
+    gap: 20px; /* Space between cards */
+    padding-bottom: 20px;
+    box-sizing: border-box;
+}
+
+/* Individual card styling */
+.rating-card {
+    background-color: #faf7f7;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 23%; /* Default width for larger screens */
+    max-width: 300px; /* Prevent cards from becoming too wide */
+    text-align: center;
+    flex-shrink: 0; /* Prevent shrinking */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Align content at the top */
+    align-items: center;
+    overflow: hidden; /* Prevent content overflow */
+    box-sizing: border-box;
+}
+
+/* Star styling */
+.stars {
+    font-size: 20px;
+    color: #f5b642; /* Golden color for stars */
+    margin-bottom: 10px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Rating text */
+.rating-text {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 10px;
+    line-height: 1.4;
+    text-align: center;
+    word-wrap: break-word; /* Ensure long words break to the next line */
+}
+
+/* Author text */
+.rating-author {
+    font-size: 0.9rem;
+    color: #777;
+    font-style: italic;
+    margin-top: 10px;
+    text-align: center;
+}
+
+/* Ensure cards grow naturally */
+.rating-card {
+    height: auto; /* Remove fixed height to allow natural growth */
+    min-height: 320px; /* Ensure minimum height for better alignment */
+}
+
+/* Responsive Design */
+
+/* Medium Screens (Tablets) */
+@media (max-width: 1024px) {
+    .rating-card {
+        width: 45%; /* Two cards per row on medium screens */
+    }
+}
+
+/* Small Screens (Mobile Phones) */
+@media (max-width: 768px) {
+    .rating-card {
+        width: 90%; /* Single card per row */
+    }
+
+    .rating-cards {
+        gap: 20px; /* Maintain spacing between rows */
+        justify-content: center; /* Center-align cards */
+    }
+}

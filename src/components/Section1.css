@@ -1,0 +1,63 @@
+/* General Styling */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+/* Header Styling */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 40px;
+  background-color: black;
+  color: white;
+  position: fixed; /* Fixes the header on the screen */
+  top: 0; /* Sticks it to the top of the page */
+  left: 0;
+  width: 99%; /* Ensures the header spans the full width */
+  z-index: 1000; /* Keeps it above other elements */
+}
+
+.logo {
+  font-size: 16px;
+  font-weight: normal;
+  letter-spacing: 1px;
+}
+
+/* Navigation Styling */
+.nav-links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0 10px;
+  margin-right: 14px;
+}
+
+.nav-links li {
+  margin-left: 0px; /* Reduced gap between buttons */
+}
+
+.nav-links a,
+.nav-links button {
+  color: white;
+  text-decoration: none;
+  font-size: 16px; /* Increased font size */
+  font-family: Trirong; /* Matched with logo font */
+  font-weight: normal; /* Matched with logo font weight */
+  padding: 6px 20px; /* Ensures equal button sizes */
+  border-radius: 5px;
+  background-color: transparent;
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  min-width: 100px; /* Ensures buttons have equal width */
+  border: none;
+  transition: text-decoration 0.3s ease;
+}
+
+.nav-links button:hover {
+  text-decoration: underline;
+}
+

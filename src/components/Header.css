@@ -1,0 +1,107 @@
+/* General Styles */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(0, 0, 0);
+    color: rgb(234, 217, 226);
+    padding: 10px 20px; /* Controls spacing inside the header */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw; /* Ensure full width of the viewport */
+    z-index: 1000;
+    box-sizing: border-box; /* Include padding in width calculations */
+    box-shadow: 0px 2px 5px rgba(244, 244, 244, 0.1); /* Optional: Subtle shadow */
+}
+
+/* Business Logo */
+.logo {
+    font-size: 17px;
+    font-weight: 400;
+    color: rgb(245, 229, 229);
+    white-space: nowrap; /* Prevents wrapping of the text */
+}
+
+/* Navigation Links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 15px; /* Adjust spacing between buttons */
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap; /* Ensures buttons wrap to the next line if needed */
+}
+
+/* Align navigation items to the right */
+.nav-links li {
+    display: inline;
+}
+
+/* Button styling for nav links */
+.nav-links li button {
+    background: none;
+    border: none;
+    color: rgb(245, 229, 229);
+    font-size: 16px;
+    font-family: 'Trirong', serif;
+    cursor: pointer;
+    text-decoration: none;
+    padding: 5px 10px; /* Adjusts button size */
+    white-space: nowrap; /* Prevents wrapping of button text */
+}
+
+/* Hover effect for buttons */
+.nav-links li button:hover {
+    text-decoration: underline;
+}
+
+/* Hamburger Menu - Positioning to the extreme left */
+.hamburger {
+    display: block;
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+    background: none;
+    border: none;
+    position: absolute;
+    right: 20px; /* Position the hamburger on the left */
+    top: 50%; /* Vertically center */
+    transform: translateY(-50%); /* Adjusts to perfectly center it */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 10px; /* Adjusted right spacing to avoid cutting off */
+        background-color: black;
+        border: 1px solid white;
+        border-radius: 5px;
+        width: 200px;
+        z-index: 1000;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        padding: 10px 0;
+        text-align: center;
+    }
+
+    /* Ensure hamburger icon is visible on smaller screens */
+    .hamburger {
+        display: block;
+    }
+}
+
+@media (min-width: 769px) {
+    .hamburger {
+        display: none; /* Hide hamburger icon on larger screens */
+    }
+}

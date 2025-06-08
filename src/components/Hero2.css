@@ -1,0 +1,130 @@
+/* Main container */
+.hero2-container {
+  display: flex;
+  flex-wrap: wrap; /* Allows wrapping for responsiveness */
+  align-items: center;
+  justify-content: center; /* Centers the content */
+  gap: 30px; /* Space between text and image */
+  padding: 30px; /* Space inside the container */
+  max-width: 1200px; /* Limits the section width */
+  margin: auto; /* Centers the container horizontally */
+}
+
+/* Left Section: Text and Buttons */
+.hero2-left {
+  flex: 1; /* Allows flexible width */
+  max-width: 600px; /* Limits the width of the text section */
+  text-align: left; /* Align text to the left */
+  margin: 20px; /* Equal margins for the section */
+  display: flex;
+  flex-direction: column; /* Stack heading, paragraph, and buttons vertically */
+  gap: 20px; /* Adds spacing between elements */
+}
+
+.hero2-left h2 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 0; /* Remove extra space */
+}
+
+.hero2-left p {
+  font-size: 1.2rem;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 1px; /* Adds space between consecutive paragraphs */
+}
+
+.hero2-buttons {
+  display: flex;
+  flex-direction: column; /* Stack buttons vertically */
+  gap: 10px; /* Space between buttons */
+  margin-top: 15px;
+}
+
+.hero2-buttons button {
+  padding: 10px 20px;
+  border: 1px solid #333;
+  background-color: black;
+  color: #fcf9f9;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.hero2-buttons button:hover {
+  background-color: #ffffff;
+  color: #090808;
+}
+
+/* Contact info box */
+.contact-info {
+  margin-top: 10px;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 10px;
+  color: white;
+  border-radius: 5px;
+}
+
+.contact-info p {
+  margin: 5px 0;
+}
+
+.contact-info a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.contact-info a:hover {
+  color: #ccc;
+}
+
+/* Right Section: Image */
+.hero2-right {
+  flex: 1; /* Flexible width */
+  display: flex;
+  justify-content: center; /* Center image horizontally */
+  align-items: center; /* Center image vertically */
+  margin: 20px; /* Equal margins for the section */
+  order: 2; /* Ensure image appears below text on smaller screens */
+}
+
+.hero2-image {
+  width: 100%; /* Ensures responsiveness */
+  max-width: 500px; /* Limits image size */
+  height: auto; /* Maintain aspect ratio */
+  min-width: 150px; /* Prevents disappearing */
+  min-height: 150px; /* Prevents disappearing */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero2-container {
+    flex-direction: column; /* Stack sections vertically */
+    text-align: center; /* Center-align the text and buttons */
+  }
+
+  .hero2-left {
+    max-width: 90%; /* Reduce width for smaller screens */
+    margin: 0 auto; /* Equal left and right margins */
+  }
+
+  .hero2-left h2 {
+    font-size: 2rem; /* Adjust font size for smaller screens */
+  }
+
+  .hero2-left p {
+    font-size: 1rem; /* Adjust font size */
+  }
+
+  .hero2-right {
+    max-width: 100%; /* Ensure full width for smaller screens */
+    margin: 0 auto; /* Equal margins for image */
+    order: 2; /* Image appears below text */
+  }
+
+  .hero2-image {
+    max-width: 90%; /* Adjust size for smaller screens */
+  }
+}

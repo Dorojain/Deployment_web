@@ -1,0 +1,218 @@
+/* Body */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+/* Gallery Container */
+.gallery-container {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #ffffff;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+/* Centered Heading and Text */
+.gallery-container h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.gallery-container p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+/* 🔹 Filter Section */
+.filter-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.filter-container label {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.filter-container select {
+    padding: 8px 12px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #fff;
+}
+
+/* 🔹 Fix Grid Alignment Issue (Switch to Flex) */
+.card-container {
+    display: flex;
+    flex-wrap: wrap; /* Ensures proper wrapping */
+    justify-content: center; /* Centers the cards properly */
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Card Wrapper */
+.card-wrapper {
+    width: 100%;
+    max-width: 250px;
+    height: 350px;
+}
+
+/* Card */
+.card {
+    width: 100%;
+    height: 100%;
+    perspective: 1000px;
+}
+
+.card-inner {
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+}
+
+.card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+/* Card Front and Back */
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: rgb(246, 243, 243);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Front Content */
+.card-front img {
+    width: 100%;
+    height: 80%;
+    object-fit: cover;
+}
+
+.card-front .stone-name {
+    font-size: 18px;
+    color: #333;
+    margin-top: 5px;
+    text-align: center;
+    font-weight: bold;
+    padding: 5px 10px;
+}
+
+/* Card Back */
+.card-back {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transform: rotateY(180deg);
+    padding: 10px;
+    gap: 5px;
+    box-sizing: border-box;
+}
+
+.card-back h3 {
+    font-size: 18px;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.card-back p {
+    font-size: 14px;
+    color: #555;
+    margin: 0;
+    line-height: 1.2;
+}
+
+/* 🔹 Fix Last Row Alignment Issue */
+.card-container::after {
+    content: "";
+    width: 250px; /* Same width as cards */
+    visibility: hidden;
+}
+
+/* 🔹 Responsive Adjustments */
+@media (max-width: 1024px) {
+    .card-container {
+        gap: 20px;
+    }
+
+    .card-wrapper {
+        height: 320px;
+    }
+}
+
+@media (max-width: 768px) {
+    .card-container {
+        flex-direction: column; /* Stack cards in a single column */
+        align-items: center;
+    }
+
+    .card-wrapper {
+        height: 300px;
+    }
+
+    /* 🔹 Make the filter responsive */
+    .filter-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .filter-container label {
+        font-size: 14px;
+    }
+
+    .filter-container select {
+        font-size: 14px;
+        padding: 6px;
+        width: 90%;
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-container h2 {
+        font-size: 28px;
+    }
+
+    .gallery-container p {
+        font-size: 16px;
+    }
+
+    .card-container {
+        display: flex;
+        flex-direction: column; /* Ensure only one card per row */
+        align-items: center;
+    }
+
+    .card-wrapper {
+        height: 280px;
+    }
+
+    /* 🔹 Improve dropdown usability on small screens */
+    .filter-container select {
+        width: 100%;
+        max-width: 280px;
+        padding: 8px;
+    }
+}
